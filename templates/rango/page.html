@@ -1,0 +1,17 @@
+{% extends 'rango/base.html' %}
+{% block title %}{{ page_name }}{% endblock %}
+{% block body_block %}
+
+		<h1>{{ page_name }}</h1>
+
+			{% if pages %}
+				<ul>
+				{% for page in pages %}
+					<li><a href="{{ page.url }}">{{ page.title }}</a></li>
+				{% endfor %}
+				</ul>
+				{% else %}
+					<strong>No pages currently.</strong>
+			{% endif %}
+
+{% endblock %}
