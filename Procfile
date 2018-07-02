@@ -1,1 +1,3 @@
-web: gunicorn tango_with_django_project.wsgi --log-file -
+release: python manage.py migrate
+web: gunicorn tango_with _django_project/wsgi.py --log-file -
+web: python manage.py runserver 0.0.0.0:$PORT --noreload
