@@ -1,1 +1,1 @@
-web: gunicorn tango_with _django_project/wsgi.py --log-file -
+web: gunicorn tango_with _django_project.wsgi --log-file -
