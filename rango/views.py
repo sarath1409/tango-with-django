@@ -9,6 +9,8 @@ from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
+import requests
+
 
 def decode_url(url_string):
 	return url_string.replace('_',' ')
@@ -19,6 +21,7 @@ def encode_url(name_string):
 def index(request):
 	request.session.set_test_cookie()
 	context = RequestContext(request)
+
 	category_list = Category.objects.order_by('-likes')[:5]
 	context_dict = {'categories': category_list}
 	for category in category_list:
