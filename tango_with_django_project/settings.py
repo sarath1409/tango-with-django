@@ -138,4 +138,7 @@ STATICFILES_DIRS = (
 	STATIC_ROOT,
 )
 
+django_heroku.settings(locals())
+
+
 
